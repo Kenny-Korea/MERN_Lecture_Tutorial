@@ -13,7 +13,7 @@ async function getCoordsForAddress(address) {
     // encodeURIComponent : 특수문자나 공백을 없애기 위해 사용하는 내장 메소드
     `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
       address
-    )}&key=apiKey`
+    )}&key=AIzaSyAUDemZ9EZva0i0fExG-CUZxQtvzx3K74Y`
   );
 
   const data = response.data;

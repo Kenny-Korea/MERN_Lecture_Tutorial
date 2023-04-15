@@ -1,10 +1,13 @@
 const express = require("express");
 // TODO. req.body를 쉽게 parsing 할 수 있는 미들웨어를 제공하는 라이브러리
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 
 const placesRoutes = require("./routes/places-routes");
 const usersRoutes = require("./routes/users-routes");
 const HttpError = require("./models/http-error");
+
+const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}P@tutorial.tdmxlo8.mongodb.net/products_test?retryWrites=true&w=majority`;
 
 const app = express();
 
@@ -31,4 +34,11 @@ app.use((error, req, res, next) => {
   res.json({ message: error.message || "An unknown error occurred!" });
 });
 
-app.listen(5001);
+mongoose
+  .connect(url)
+  .then(() => {
+    app.listen(5001);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
