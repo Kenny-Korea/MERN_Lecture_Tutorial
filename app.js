@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const placesRoutes = require("./routes/places-routes");
 const usersRoutes = require("./routes/users-routes");
 const HttpError = require("./models/http-error");
+require("dotenv").config();
 
 const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}P@tutorial.tdmxlo8.mongodb.net/products_test?retryWrites=true&w=majority`;
 
