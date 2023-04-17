@@ -31,7 +31,7 @@ const PlaceItem = (props) => {
 
   return (
     <React.Fragment>
-      <Modal
+      {/* <Modal
         show={showMap}
         onCancel={closeMapHandler}
         header={props.address}
@@ -42,8 +42,8 @@ const PlaceItem = (props) => {
         <div className="map-container">
           <Map center={props.coordinates} zoom={16} />
         </div>
-      </Modal>
-      <Modal
+      </Modal> */}
+      {/* <Modal
         show={showConfirmModal}
         onCancel={cancelDeleteHandler}
         header="Are you sure?"
@@ -63,7 +63,7 @@ const PlaceItem = (props) => {
           Do you want to proceed and delete this place? Please note that it
           can't be undone thereafter.
         </p>
-      </Modal>
+      </Modal> */}
       <li className="place-item">
         <Card className="place-item__content">
           <div className="place-item__image">
